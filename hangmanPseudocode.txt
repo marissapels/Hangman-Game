@@ -1,0 +1,26 @@
+Computer chooses a random word from array
+
+Word is displayed with letters as "_" rather than actual letter
+
+Game starts when user starts typing/guessing letters
+
+For each correct letter
+	letter is revealed
+
+For each incorrect letter
+	hangman is constructed
+	Incorrect guesses are shown
+
+When entire word it guessed, user wins!
+
+if user guess is contained in computer guess
+	return index number/s of letter in string
+	replace - with returned index number with user guess
+
+
+
+Cities:
+Paris, France
+London, England
+Beijing, China
+Tokyo, Japan
