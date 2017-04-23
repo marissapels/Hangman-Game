@@ -15,55 +15,57 @@
 
 	   var cities =["marissa"];
 
-	   var lettersGuessed = " ";
+	   var lettersGuessed = " ";	   
 
-	   //document.onkeyup = function (event ){
 	   window.onload = function(event) {
+	   	   	var computerChoice = cities[Math.floor(Math.random() * cities.length)];
+	   		var computerChoiceHidden =  computerChoice.replace(/[a-z]/g, "-");
 
-	   	var computerChoice = cities[Math.floor(Math.random() * cities.length)];
-	   	var computerChoiceHidden =  computerChoice.replace(/[a-z]/g, "-");
+		   	document.onkeyup = function (event){
 
-	   	
-	   	document.onkeyup = function (event){
+		   		//Function that replaces an index in a string with a specified value
 
-	   		String.prototype.replaceAt=function(index, replacement) {
-    				return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+	    		function replaceAt(string,index,replacement) {
+	    				return string.substr(0, index) + replacement + string.substr(index+1);
 				}
 
-
+					//userGuess is equal to the key that the user selects
 				var userGuess = event.key;
-
-
 
 				if (computerChoice.includes(userGuess)){
 					var letterIndex =[];
+					//creates an array that stores the index value of where the letter guessed is located in the string
 					for (var i=0; i<computerChoice.length; i++){
 						if(computerChoice[i] === userGuess) letterIndex.push(i);
 					}
-					
+					//replaces the "-" with the determined index locations in letterIndex. Loop is important for words containing more than one of the same letter.
+						
 					for (var j=0; j<letterIndex.length; j++){
-						computerChoiceHidden =  computerChoiceHidden.replaceAt(letterIndex[j], userGuess);
+							computerChoiceHidden=replaceAt(computerChoiceHidden, letterIndex[j], userGuess);
 					}
-
 				}
 
-				/*if ((computerChoice === "paris") && (userGuess === "a")) {
-				   computerChoiceHidden =  computerChoiceHidden.replace("-", "a");
-			   }*/
+				else {
+					lettersGuessed.push(userGuess);
+				}
 
-
-
-				var html = "<p>Start guessing letters to begin the game!</p>" + "<p>test test test</p>" + 
-				   				computerChoiceHidden;
+				var html = "<p>Start guessing letters to begin the game!</p>" + 
+						computerChoiceHidden + 
+						"<p> Letters Guessed: </p>" + lettersGuessed;
 
 				document.querySelector("#game").innerHTML = html;
-			}
-			   		   	
-			var html = "<p>Start guessing letters to begin the game!</p>" + "<p>test test test</p>" + 
-				   				computerChoiceHidden;
+				}
+				   		   	
+			var html = "<p>Start guessing letters to begin the game!</p>" +  
+				computerChoiceHidden +
+				"<p> Letters Guessed: </p>" + lettersGuessed;
+
 
 			document.querySelector("#game").innerHTML = html;
-	   }
+		}
+
+			
+	   
 
 	   </script>
 
