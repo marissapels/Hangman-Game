@@ -1,0 +1,63 @@
+body{
+	background: black;
+}
+
+header {
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+header h1{
+	color:#edf1f7;
+	font-size:40px;
+	text-align:center;
+	padding:10px;
+	font-family: 'Acme', sans-serif;
+	font-weight:bolder;
+}
+
+.container{
+	width:100%;
+	margin:auto;
+}
+
+.section1, .section2{
+	background:#edf1f7;
+	border: 5px solid #929393;
+	border-radius:25px;
+	font-size:27px;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+}
+
+.section1 {
+    width: 75%;
+    padding: 20px;
+    margin: 0 auto 30px auto;
+}
+
+.section2 {
+	padding: 20px;
+    width: 50%;
+    margin: auto;
+    height: 200px;
+}
+
+#parisWin{
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.win1, .win2, .win3 {
+	width: 250px;
+	border-width:20px 20px 80px 20px;
+	border-color:white;
+	border-style:solid;
+}
+
+.letters {
+	color:white;
+}
