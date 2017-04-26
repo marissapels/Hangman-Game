@@ -3,52 +3,45 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Hangman</title>
+		<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 	</head>
 	<body>
-		<h1>Hangman, Travel Edition</h1>
+		<header>
+			<h1>Hangman, Travel Edition</h1>
+		</header>
 
-		<div id="game">
-	    	<p> Start guessing letters to begin the game! </p>
-	   </div>
+		<div id="image">
+			<img src="assets/images/worldQuestion.jpg" alt="Travel Image"  id="display">
+		</div>
 
-	   <script type="text/javascript">
-	   var cities =["marissa"];
-	   var lettersGuessed = " ";
-	   //document.onkeyup = function (event ){
-	window.onload = function(event) {
-	   	var computerChoice = cities[Math.floor(Math.random() * cities.length)];
-	   	var computerChoiceHidden =  computerChoice.replace(/[a-z]/g, "-");
-	   	
-	   	document.onkeyup = function (event){
-	   		String.prototype.replaceAt=function(index, replacement) {
-    				return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
-			}
-			var userGuess = event.key;
-			if (computerChoice.includes(userGuess)){
-				var letterIndex =[];
-				for (var i=0; i<computerChoice.length; i++){
-					if(computerChoice[i] === userGuess) letterIndex.push(i);
-				}
-					
-				for (var j=0; j<letterIndex.length; j++){
-					computerChoiceHidden =  computerChoiceHidden.replaceAt(letterIndex[j], userGuess);
-				}
-			}
-				/*if ((computerChoice === "paris") && (userGuess === "a")) {
-				   computerChoiceHidden =  computerChoiceHidden.replace("-", "a");
-			   }*/
-			var html = "<p>Start guessing letters to begin the game!</p>" + "<p>test test test</p>" + 
-				   				computerChoiceHidden;
-			document.querySelector("#game").innerHTML = html;
-		}
-			   		   	
-		var html = "<p>Start guessing letters to begin the game!</p>" + "<p>test test test</p>" + 
-				   				computerChoiceHidden;
-		document.querySelector("#game").innerHTML = html;
-	}
-	   </script>
+		<!--<div id="parisWin">
+			<img src="assets/images/eiffelTower.jpg" alt="Eiffel Tower" class="win1" id="eiffel">
+			<img src="assets/images/arch.jpg" alt="Arc de Triomphe" class="win2" id="arc">
+			<img src="assets/images/lourve.jpg" alt="lourve" class="win3" id="lourve">-->
+		</div>
+
+		<section class="container">
+			<div class="row">
+				<div class="section1">
+					<p>Start guessing letters to begin the game!</p>
+					<span id="dashes"> </span>
+				</div>
+				<div class="section2">
+					<p>Letters Guessed: </p>
+					<span id="guesses"> no letters guessed </span>
+					<p>Guesses Left: </p>
+					<span id="guessesLeft"> 12 </span>
+				</div>
+
+			</div>
+		</section>
+
 
 
 	</body>
-
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </html>

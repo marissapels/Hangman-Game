@@ -1,61 +1,71 @@
 body{
-	background: black;
+	background-image: url("../images/colorMap.jpg");
+	background-size: cover;
+	width:100%;
 }
 
 header {
     width: 100%;
     overflow: auto;
-    margin-bottom: 20px;
+    margin-bottom:10px;
+    display:inline;
+    position:relative;
+    top:0px;
 }
 
 header h1{
-	color:#edf1f7;
-	font-size:40px;
-	text-align:center;
-	padding:10px;
-	font-family: 'Acme', sans-serif;
-	font-weight:bolder;
+    color: black;
+    font-size: 64px;
+    text-align: center;
+    font-family: 'Acme', sans-serif;
+    font-weight: bolder;
+    margin: 0px auto
+}
+
+header h2 {
+	font-family: 'Dancing Script', cursive;
+    font-size: 43px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px auto;
 }
 
 .container{
-	width:100%;
-	margin:auto;
+	width:85%;
 }
 
-.section1, .section2{
-	background:#edf1f7;
-	border: 5px solid #929393;
-	border-radius:25px;
-	font-size:27px;
+.section1, .section2, .section3{
+	border: 5px solid #8e979e;
+	font-size:25px;
+	color:black;
 	font-family: 'Raleway', sans-serif;
+	font-weight:bold;
 	text-align:center;
+	overflow:auto;
+	margin:10px;
+	opacity:0.7;
 }
 
 .section1 {
-    width: 75%;
-    padding: 20px;
-    margin: 0 auto 30px auto;
+	background:#f7f4e6;
+	height:200px;
 }
 
 .section2 {
-	padding: 20px;
-    width: 50%;
-    margin: auto;
-    height: 200px;
+	background:#f7f4e6;
+	height:200px;
+	padding:40px;
 }
 
-#parisWin{
-    visibility: hidden;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-}
+.section3{
+	background:#f7f4e6;
+	height:200px;
+	padding-top:20px;
+ }
 
-.win1, .win2, .win3 {
-	width: 250px;
-	border-width:20px 20px 80px 20px;
-	border-color:white;
-	border-style:solid;
+#display {
+	width:50%;
+	padding:20px;
 }
 
 .letters {
