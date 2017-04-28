@@ -5,6 +5,7 @@ var losses=0;
 
 function restartGame(){
 		var lettersGuessed = [];
+		var availableKeys="abcdefghijklmnopqrstuvwxyz";
 		var guessesLeft =12;
 		var computerChoice = cities[Math.floor(Math.random() * cities.length)];
 		var computerChoiceHidden =  computerChoice.replace(/[a-z]/g, "-");
@@ -38,7 +39,7 @@ function restartGame(){
 			}
 		}
 		//if userGuess is not contained in word, it pushes the letter to an array and subtracts from guessesLeft
-		else if (lettersGuessed.includes(userGuess)===false && userGuess.match(/[a-z]/) && guessesLeft>0){
+		else if (lettersGuessed.includes(userGuess)===false && availableKeys.includes(userGuess) && guessesLeft>0){
 			lettersGuessed.push(userGuess);
 			guessesLeft--;
 		}
