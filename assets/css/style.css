@@ -59,7 +59,15 @@ header h2 {
 	width:100%;
  }
 
-.wins, .guessesLeft{
+.wins{
+	padding-top:10px;
+}
+
+.losses{
+	padding-top:-5px;
+}
+
+.guessesLeft{
 	padding-top:30px;
 }
 

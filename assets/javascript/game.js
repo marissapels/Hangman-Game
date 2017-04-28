@@ -1,5 +1,7 @@
 var cities =["paris", "london", "beijing", "rome", "austin", "amsterdam", "prague", "bangkok"];
+
 var wins=0;
+var losses=0;
 
 function restartGame(){
 		var lettersGuessed = [];
@@ -12,6 +14,7 @@ function restartGame(){
 	document.querySelector("#guesses").innerHTML = lettersGuessed;
 	document.querySelector("#guessesLeft").innerHTML = guessesLeft;
 	document.querySelector("#wins").innerHTML = wins;
+	document.querySelector("#losses").innerHTML = losses;
 
 
 	//Game begins when any key is selected
@@ -35,9 +38,15 @@ function restartGame(){
 			}
 		}
 		//if userGuess is not contained in word, it pushes the letter to an array and subtracts from guessesLeft
-		else if (lettersGuessed.includes(userGuess)===false && userGuess.match(/[a-z]/)){
+		else if (lettersGuessed.includes(userGuess)===false && userGuess.match(/[a-z]/) && guessesLeft>0){
 			lettersGuessed.push(userGuess);
 			guessesLeft--;
+		}
+
+		if (guessesLeft===0){
+			losses++;
+			restartGame();
+			return;
 		}
 
 		//When user guesses the word, image and city name are displayed. Game restarts.
@@ -108,9 +117,11 @@ function restartGame(){
 		document.querySelector("#guesses").innerHTML = lettersGuessed;
 		document.querySelector("#guessesLeft").innerHTML = guessesLeft;
 		document.querySelector("#wins").innerHTML = wins;
+		document.querySelector("#losses").innerHTML = losses;
 	}
 
 }
 window.onload = function(event) {
+
 	   	restartGame();	 		   
 }
