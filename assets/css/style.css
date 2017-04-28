@@ -2,6 +2,7 @@ body{
 	background-image: url("../images/colorMap.jpg");
 	background-size: cover;
 	width:100%;
+	box-sizing:border-box;
 }
 
 header {
@@ -41,34 +42,29 @@ header h2 {
 	font-family: 'Raleway', sans-serif;
 	font-weight:bold;
 	text-align:center;
-	overflow:auto;
+	overflow:hidden;
 	margin:10px;
-	opacity:0.7;
+	background-color: rgba(247, 244, 230, 0.7);
 	width:100%;
 }
 
 .section1 {
-	background:#f7f4e6;
 	height:420px;
+	width:100%;
 }
 
-.section2 {
-	background:#f7f4e6;
+.section2, .section3{
 	height:200px;
-	padding:20px;
-}
-
-.section3{
-	background:#f7f4e6;
-	height:200px;
-	padding-top:20px;
+	padding: 10px;
+	width:100%;
  }
 
-#display {
-	width:50%;
-	padding:20px;
+.wins, .guessesLeft{
+	padding-top:30px;
 }
 
-.letters {
-	color:white;
-}
+#display {
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+    opacity: 1;
